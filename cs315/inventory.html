@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory</title>
+</head>
+
+<h2><b>Inventory</b></h2>
+Item Name <br><br>
+<input type="text" id="input"><br><br>
+
+Item Catagory <br>
+<input type="text" id="item"><br><br>
+
+Quantity <br>
+<input type="text" id="quan"><br><br>
+<button type="button" onclick="myfunction1()">Add</button>
+<div id="ans1"></div>
+<div id="ans2"></div>
+<div id="ans3"></div>
+
+<body>
+<script>
+function myfunction1(){
+    ItemName = document.getElementById("input").value;
+    ItemCatagory = document.getElementById("item").value;
+    Quanitity = document.getElementById("quan").value;
+    let answer1 = ("Product Name: " + ItemName);
+    let answer2 = ("Catagory: " + ItemCatagory);
+    let answer3 = ("Quanitity: " + Quanitity);
+
+   document.getElementById("ans1").innerHTML = answer1;
+   document.getElementById("ans2").innerHTML = answer2;
+   document.getElementById("ans3").innerHTML = answer3;
+
+}
+</script>
+</body>
+</html>
