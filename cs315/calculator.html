@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+     //Questin#4.Design a simple calculator application as shown in picture below and make it work.Put this on
+function myfunction1(){
+    FirstValue = +(document.getElementById("first").value);
+    SecondValue = +(document.getElementById("second").value);
+    let sum = FirstValue + SecondValue;
+    document.getElementById("ans1").innerHTML = (`The Sum is: ${sum}`);
+}
+function myfunction2() {
+    FirstValue = +(document.getElementById("first").value);
+    SecondValue = +(document.getElementById("second").value);
+    let difference = FirstValue - SecondValue;
+       document.getElementById("ans2").innerHTML = (`The Difference is: ${difference}`);
+}
+function myfunction3() {
+    FirstValue = +(document.getElementById("first").value);
+    SecondValue = +(document.getElementById("second").value);
+    let product = FirstValue * SecondValue;
+    document.getElementById("ans3").innerHTML = (`The Product is: ${product}`);
+}
+function myfunction4() {
+    FirstValue = +(document.getElementById("first").value);
+    SecondValue = +(document.getElementById("second").value);
+    let quotient = FirstValue / SecondValue;
+    document.getElementById("ans4").innerHTML = (`The Quotient is: ${quotient}`);
+}
+function myfunction5() {
+    FirstValue = +(document.getElementById("first").value);
+    SecondValue = +(document.getElementById("second").value);
+    let module = FirstValue % SecondValue;
+    document.getElementById("ans5").innerHTML = (`The Module is: ${module}`);
+}
+</script>
+<body>
+    <!--Questin#4.Design a simple calculator application as shown in picture below and make it work. Put this on-->
+    <h2><b>Simple Calculator</b></h2>
+    First Value <br>
+    <input type="text" id="first"><br><br>
+    Second Value <br>
+    <input type="text" id="second"><br><br>
+    Operations <br><br>
+    <button onclick="myfunction1()">+</button>
+    <button onclick="myfunction2()">-</button>
+    <button onclick="myfunction3()">*</button>
+    <button onclick="myfunction4()">/</button>
+    <button onclick="myfunction5()">%</button><br><br>
+    Result <br><br>
+    <div id="ans1"></div>
+    <div id="ans2"></div>
+    <div id="ans3"></div>
+    <div id="ans4"></div>
+    <div id="ans5"></div>
+</body>
+</html>
