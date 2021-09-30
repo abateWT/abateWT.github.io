@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<form name="myTable">
+     Input</p>
+     <input type="text" name="inputtext" /></p>
+     Output</p>
+     <textarea name="outtext"></textarea></p>
+     <input type="button" value = "Click to add" onClick = "Add()">
+</form>
+
+<body>
+<script>
+    //Question#2. When "Click to add" button is clicked, text typed inside input text field should be
+     //appended to the ouput textarea and input field should be cleared.
+  function Add() {
+      let textNew = document.myTable.inputtext.value;
+      document.myTable.outtext.value = document.myTable.outtext.value + textNew;
+      document.myTable.inputtext.value = "";
+    }
+</script>
+</body>
+</html>
