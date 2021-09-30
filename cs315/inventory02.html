@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    let obj=[]
+    function myAddToList() {
+      let productName=document.getElementById("itemName").value
+      let category = document.getElementById("itemCatagory").value
+      let quanitity = document.getElementById("quanitity").value
+      let mytabele=document.getElementById("myobject")
+      let row = document.createElement('tr')
+
+      let newobj={
+        productName:productName,
+        category:category,
+        quanitity:quanitity
+      }
+      if(productName!='' && category!=''&& (typeof quanitity!="number")){
+
+
+      obj.push(newobj)
+      console.log(obj)
+      let x = document.createElement('td')
+      x.innerText = productName
+      let y = document.createElement('td')
+      y.innerText=category
+      let z = document.createElement('td')
+      z.innerText += quanitity
+      // row.innerText+=x
+      row.append(x)
+      row.append(y)
+      row.append(z)
+        console.log(row)
+
+      mytabele.append(row)
+      document.getElementById("itemName").value=''
+       document.getElementById("itemCatagory").value=''
+       document.getElementById("quanitity").value=''
+      // alert(productName + category + quanitity)
+
+      }
+      else{
+        alert("Empty field is not Accepted!")
+      }
+
+    }
+
+  </script>
+</head>
+
+<body>
+  <h2><b> Inventory </b></h2>
+  <div class="myInven">
+    Item Name</p>
+    <input type="text" id="itemName"  /></p>
+    Item Catagory</p>
+    <input type="text" id="itemCatagory" /></p>
+    Quantity</p>
+    <input type="text" id="quanitity" /></p>
+
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <input type="button" value="Add" onClick="myAddToList()">
+  </div>
+  <select name="" id="">
+    <option value="ff">sort</option>
+    <option value="ff">sort</option>
+  </select>
+  <table  border="1">
+    <thead>
+      <th>ProductName</th>
+      <th>Category</th>
+      <th>Quantity</th>
+      <th>Stock Number</th>
+      <th>Action</th>
+    </thead>
+    <tbody id="myobject">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <button>Edit</button>
+          <button>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
