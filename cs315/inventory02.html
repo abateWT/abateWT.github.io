@@ -2,20 +2,25 @@
 <html>
 <head>
   <script>
-    let obj=[]
-    function myAddToList() {
-      let productName=document.getElementById("itemName").value
-      let category = document.getElementById("itemCatagory").value
-      let quanitity = document.getElementById("quanitity").value
+    //1.Add One more text field, Ratings .
+var obj=[]
+function myAddToList() {
+      var productName =document.getElementById("itemName").value
+      var category = document.getElementById("itemCatagory").value
+      var quanitity = document.getElementById("quanitity").value
+      var ratings = document.getElementById("ratings").value
+
       let mytabele=document.getElementById("myobject")
       let row = document.createElement('tr')
 
-      let newobj={
+      var newobj= {
         productName:productName,
         category:category,
-        quanitity:quanitity
-      }
-      if(productName!='' && category!=''&& (typeof quanitity!="number")){
+        quanitity:quanitity,
+        ratings:ratings
+
+      };
+      if(productName!='' && category!=''&& ratings!='' && (typeof quanitity!="number")){
 
 
       obj.push(newobj)
@@ -24,27 +29,64 @@
       x.innerText = productName
       let y = document.createElement('td')
       y.innerText=category
+      let r = document.createElement('td')
+      r.innerText=  quanitity
       let z = document.createElement('td')
-      z.innerText += quanitity
+      z.innerText += ratings
       // row.innerText+=x
       row.append(x)
       row.append(y)
+      row.append(r)
       row.append(z)
-        console.log(row)
+      console.log(row)
 
       mytabele.append(row)
       document.getElementById("itemName").value=''
-       document.getElementById("itemCatagory").value=''
-       document.getElementById("quanitity").value=''
+      document.getElementById("itemCatagory").value=''
+      document.getElementById("quanitity").value=''
+      document.getElementById("ratings").value=''
       // alert(productName + category + quanitity)
+      //Edit - > Edits the details.
+function myEdit(){
 
+   }
+function myRemove(){
+
+   }
       }
       else{
         alert("Empty field is not Accepted!")
       }
+function mySort(){
+    let productName =document.getElementById("itemName").value
+    let category = document.getElementById("itemCatagory").value
+    let quanitity = document.getElementById("quanitity").value
+    let ratings = document.getElementById("ratings").value
 
-    }
+    let mytabele=document.getElementById("myobject")
+    let row = document.createElement('tr')
 
+
+function mySort(){
+  if(typeof ratings == 'number'){
+    alert(newobj.sort((firstItem,secondItem) => firstItem.ratings - secondItem.ratings));
+  } else {
+    alert("Please! Enter a Quanitity Number")
+  }
+}
+mySort();
+ }
+
+function myFilter(){
+
+
+ }
+function redfunction(){
+
+
+ }
+}
+//Show an alert when the price is not number and turn the box into red.
   </script>
 </head>
 
@@ -56,21 +98,41 @@
     Item Catagory</p>
     <input type="text" id="itemCatagory" /></p>
     Quantity</p>
-    <input type="text" id="quanitity" /></p>
+    <input type="text" id="quanitity" onblur="redfunction(this)" /></p>
+    Ratings</p>
+    <input type="text" id="ratings" /></p>
 
-    <textarea name="" id="" cols="30" rows="10"></textarea>
-    <input type="button" value="Add" onClick="myAddToList()">
+    <textarea name="" id="" cols="22" rows="10"></textarea><br>
+    <style>
+
+    </style>
+    <input style="background-color:rgb(0, 255, 170);" type="button" value="Add" onClick="myAddToList()"><br><br>
   </div>
-  <select name="" id="">
-    <option value="ff">sort</option>
-    <option value="ff">sort</option>
+  <select style="background-color: darkseagreen;" id="sort1" onclick="mySort()"><br>
+    <option value="s1">Sort</option>
+    <option value="s2">Item Catagory</option>
+    <option value="s3"> quanitity</option>
+    <option value="s4"> ratings</option>
   </select>
-  <table  border="1">
+   <select style="background-color: darkseagreen;" id="filter01" onclick="myFilter()"><br>
+
+    <option value="f1"> Filter </option>
+    <option value="f1"> </option>
+    <option value="f2">Item Catagory</option>
+    <option value="f3"> quanitity</option>
+    <option value="f4"> ratings</option>
+  </select><br><br>
+ <table  border="1">
+   <style>
+     th {
+       background-color:rgb(148, 224, 97);
+     }
+   </style>
     <thead>
       <th>ProductName</th>
       <th>Category</th>
       <th>Quantity</th>
-      <th>Stock Number</th>
+      <th>Ratings</th>
       <th>Action</th>
     </thead>
     <tbody id="myobject">
@@ -80,8 +142,8 @@
         <td></td>
         <td></td>
         <td>
-          <button>Edit</button>
-          <button>Delete</button>
+          <button style="background-color: darkgoldenrod;" onclick="myEdit()">Edit</button>
+          <button style="background-color: darkgoldenrod;" onclick="myRemove()">Remove</button>
         </td>
       </tr>
     </tbody>
