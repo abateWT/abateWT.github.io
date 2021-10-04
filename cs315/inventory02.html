@@ -71,7 +71,7 @@ function mySort(){
   if(typeof ratings == 'number'){
     alert(newobj.sort((firstItem,secondItem) => firstItem.ratings - secondItem.ratings));
   } else {
-    alert("Please! Enter a Quanitity Number")
+    alert("Please! Enter a Quanitity, Number")
   }
 }
 mySort();
@@ -103,9 +103,7 @@ function redfunction(){
     <input type="text" id="ratings" /></p>
 
     <textarea name="" id="" cols="22" rows="10"></textarea><br>
-    <style>
 
-    </style>
     <input style="background-color:rgb(0, 255, 170);" type="button" value="Add" onClick="myAddToList()"><br><br>
   </div>
   <select style="background-color: darkseagreen;" id="sort1" onclick="mySort()"><br>
@@ -127,6 +125,11 @@ function redfunction(){
      th {
        background-color:rgb(148, 224, 97);
      }
+
+    tr:hover {
+    background: rgb(148, 104, 68);
+    }
+
    </style>
     <thead>
       <th>ProductName</th>
