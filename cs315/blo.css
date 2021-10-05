@@ -1,0 +1,19 @@
+body {
+  background-color: lightgray;
+}
+.row {
+  position: relative;
+  float: right;
+}
+.blog {
+  border: 1px;
+  position: relative;
+  float: right;
+}
+
+img {
+  width: 30%;
+  height: 30%;
+  position: relative;
+  float: left;
+}
