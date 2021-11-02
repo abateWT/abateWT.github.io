@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>myPictures</title>
+    <style>
+      img {
+        display: inline;
+        padding: 10px;
+        width: 250px;
+        height: 220px;
+        border-radius: 2px solid black;
+      }
+      #btn {
+        background-color: rgb(173, 226, 230);
+        width: 75px;
+        height: 45px;
+        color: black;
+        font-weight: bold;
+        font-size: 20px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <script>
+    function myfunction() {
+      let pic1 = document.getElementById("d1");
+      let pic2 = document.getElementById("d2");
+      let picture = pic1.src;
+      pic1.src = pic2.src;
+      pic2.src = picture;
+    }
+  </script>
+  <body>
+    <div
+      class="cont"
+      style="
+        background-color: black;
+        width: 550px;
+        height: 510px;
+        border: 3px solid black;
+      "
+    >
+      <h2
+        style="
+          text-align: center;
+          font-size: 20px;
+          background-color: rgb(173, 226, 230);
+          padding: 50px;
+          font-style: italic;
+        "
+      >
+        <strong>My Swap Pictures Layout</strong>
+      </h2>
+
+      <img id="d1" src="Dog01.jpeg" alt="picture1" />
+      <img id="d2" src="Dog2.jpeg" alt="picture2" /><br />
+      <p style="color: white">
+        <b>Click here to Change Position of the Pictures!</b>
+      </p>
+      <button id="btn" type="button" onclick="myfunction()">Swap</button>
+    </div>
+  </body>
+</html>
+
