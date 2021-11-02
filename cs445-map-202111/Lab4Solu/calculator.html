@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>myCalculator</title>
+  </head>
+  <script>
+    function submit() {
+      let num1 = +document.getElementById("01").value;
+      let num2 = +document.getElementById("02").value;
+      let result = num1 + num2;
+      document.getElementById(
+        "answer"
+      ).innerHTML = `The Sum of the two Numbers is: ${result}`;
+    }
+  </script>
+  <body>
+    <div
+      style="
+        background-color: black;
+        height: 250px;
+        width: 250px;
+        text-align: center;
+        justify-self: center;
+        border: black;
+        border-radius: 5px solid black;
+        padding: 50px;
+      "
+    >
+      <h2 style="text-align: center; color: white"><b>My Calculator</b></h2>
+      <label for="action" style="color: white">
+        Number1 <input id="01" type="text" /><br /><br />
+        Number2 <input id="02" type="text" /><br /><br />
+        <button
+          style="color: black; background-color: yellow; font-weight: bold"
+          type="button"
+          onclick="submit()"
+        >
+          Submit
+        </button>
+        <div id="answer"></div>
+      </label>
+    </div>
+  </body>
+</html>
